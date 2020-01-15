@@ -19,6 +19,10 @@
       </q-toolbar>
     </q-header>
 
+    <q-footer elevated>
+          footer
+    </q-footer>
+
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
