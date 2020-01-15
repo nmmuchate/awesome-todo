@@ -19,8 +19,17 @@
       </q-toolbar>
     </q-header>
 
-    <q-footer elevated>
-          footer
+    <q-footer>
+      <q-tabs>
+        <q-route-tab
+          to="/"
+          icon="list"
+          label="Todo" />
+        <q-route-tab 
+          to="/settings"
+          icon="settings"
+          label="Settings"/>
+      </q-tabs>    
     </q-footer>
 
     <q-drawer
