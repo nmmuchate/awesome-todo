@@ -5,13 +5,12 @@ const routes = [
     component: () => import('layouts/Layout.vue'),
     children: [
       { 
-        path: '/settings', 
-        component: () => import('pages/PaginaTODO.vue') }
+        path: '', 
+        component: () => import('pages/PaginaTODO.vue') 
       },
-      path: '/settings', 
-        component: () => import('pages/PaginaTODO.vue') }
-      {
-
+      { 
+        path: '/settings', 
+        component: () => import('pages/PaginaSettings.vue') 
       }
     ]
   }
