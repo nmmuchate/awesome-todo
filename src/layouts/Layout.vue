@@ -41,29 +41,19 @@
       <q-list>
         <q-item-label header>Navigation</q-item-label>
 
-        <q-item 
-        to="/"
-        exact
-        clickable>
-          <q-item-section avatar>
-            <q-icon name="list" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Todo</q-item-label>
-          </q-item-section>
+        <q-item
+          v-for="nav in navs"
+          :to="nav.to"
+          exact
+          clickable>
+            <q-item-section avatar>
+              <q-icon :name="nav.icon" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>{{ nav.label }}</q-item-label>
+            </q-item-section>
         </q-item>
 
-        <q-item 
-        to="/settings"
-        exact
-        clickable>
-          <q-item-section avatar>
-            <q-icon name="settings" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Settings</q-item-label>
-          </q-item-section>
-        </q-item>
       </q-list>
     </q-drawer>
 
@@ -74,13 +64,26 @@
 </template>
 
 <script>
-export default {
-  name: 'MyLayout',
+  import { openURL } from 'quasar'
+  export default {
+    name: 'MyLayout',
 
-  data () {
-    return {
-      leftDrawerOpen: false
+    data () {
+      return {
+        leftDrawerOpen: false ,
+        navs: [
+          {
+            label:'Todo',
+            icon:'list',
+            to:'/'
+          },
+          {
+            label:'Settings',
+            icon:'settings',
+            to:'/settings'
+          }
+        ] 
+      }
     }
   }
-}
 </script>
