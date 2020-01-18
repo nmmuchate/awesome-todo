@@ -22,13 +22,11 @@
     <q-footer>
       <q-tabs>
         <q-route-tab
-          to="/"
-          icon="list"
-          label="Todo" />
-        <q-route-tab 
-          to="/settings"
-          icon="settings"
-          label="Settings"/>
+          v-for="nav in navs"
+          :key="nav.labe"
+          :to="nav.to"
+          :icon="nav.icon"
+          :label="nav.label" />
       </q-tabs>    
     </q-footer>
 
@@ -43,6 +41,7 @@
 
         <q-item
           v-for="nav in navs"
+          :key="nav.label"
           :to="nav.to"
           exact
           clickable>
@@ -62,6 +61,8 @@
     </q-page-container>
   </q-layout>
 </template>
+
+
 
 <script>
   import { openURL } from 'quasar'
