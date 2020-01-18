@@ -12,10 +12,9 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Awesome Todo
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        
       </q-toolbar>
     </q-header>
 
@@ -32,7 +31,7 @@
 
     <q-drawer
       v-model="leftDrawerOpen"
-      show-if-above
+      :breakpoint="767"
       bordered
       content-class="bg-grey-2"
     >
@@ -62,8 +61,6 @@
   </q-layout>
 </template>
 
-
-
 <script>
   import { openURL } from 'quasar'
   export default {
@@ -88,3 +85,11 @@
     }
   }
 </script>
+
+<style>
+  @media screen and (min-width: 768px) {
+    .q-footer{
+      display: none;
+    }
+  }
+</style>
