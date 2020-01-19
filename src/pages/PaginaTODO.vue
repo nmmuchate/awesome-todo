@@ -20,19 +20,7 @@
         />   
       </div>
     <q-dialog v-model="showAddTask">
-      <q-card>
-        <q-card-section>
-          <div class="text-h6">Alert</div>
-        </q-card-section>
-
-        <q-card-section>
-          frymys is a dounb
-        </q-card-section>
-
-        <q-card-actions align="right">
-          <q-btn flat label="OK" color="primary" v-close-popup/>
-        </q-card-actions>
-      </q-card>
+      <add-task/>
     </q-dialog>  
   </q-page>
 </template>
@@ -45,7 +33,8 @@ export default {
     ...mapGetters('tasks', ['tasks'])
     },
     components: {
-      'task' : require('components/Tasks/Task.vue').default
+      'task' : require('components/Tasks/Task.vue').default,
+      'add-task' : require('components/Tasks/Modals/AddTask.vue').default,
     }
   }
 </script>
