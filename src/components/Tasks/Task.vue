@@ -27,6 +27,11 @@
             </div>
            </div>  
         </q-item-section>
+
+        <q-item-section side>
+           <q-btn @click="prompToDelete(id)" flat round dense color="red" icon="delete"/>
+        </q-item-section>
+
       </q-item>
 </template>
 
@@ -36,7 +41,22 @@
 export default {
     props: ['task', 'id'],
     methods: {
-        ...mapActions('tasks', ['updateTask'])
+        ...mapActions('tasks', ['updateTask']),
+        promptToDelete(id) {
+            this.$q.dialog({
+                title: 'Confirm',
+                message: 'Really delete?',
+                ok: {
+                    push: true
+                },
+                cancel: {
+                    color: 'negative'
+                },
+                persistent: true
+            }).onOk (() => {
+                console.log('delete')
+            })
+        }
     }
 }
 </script>
