@@ -12,12 +12,28 @@
 
     <div class="absolute-bottom text-center" q-mb-lg>
       <q-btn
+        @click="showAddTask = true"
         round
         color="primary"
         size="24px"
         icon="add"
         />   
-      </div>  
+      </div>
+    <q-dialog v-model="showAddTask">
+      <q-card>
+        <q-card-section>
+          <div class="text-h6">Alert</div>
+        </q-card-section>
+
+        <q-card-section>
+          frymys is a dounb
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat label="OK" color="primary" v-close-popup/>
+        </q-card-actions>
+      </q-card>
+    </q-dialog>  
   </q-page>
 </template>
 
