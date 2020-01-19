@@ -2,6 +2,14 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
+        <q-btn
+          flat
+          dense
+          round
+          @click="leftDrawerOpen = !leftDrawerOpen"
+          icon="menu"
+          aria-label="Menu"
+        />
 
         <q-toolbar-title class="absolute-center">
           Awesome Todo
@@ -26,7 +34,7 @@
       :breakpoint="767"
       :width="250"
       bordered
-      content-class="bg-grey-2"
+      content-class="bg-primary"
     >
       <q-list dark>
         <q-item-label header>Navigation</q-item-label>
