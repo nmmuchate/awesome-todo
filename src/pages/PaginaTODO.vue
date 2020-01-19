@@ -8,7 +8,16 @@
         :task="task" 
         :id="key"></task>
 
-    </q-list>        
+    </q-list> 
+
+    <div class="absolute-bottom text-center" q-mb-lg>
+      <q-btn
+        round
+        color="primary"
+        size="24px"
+        icon="add"
+        />   
+      </div>  
   </q-page>
 </template>
 
