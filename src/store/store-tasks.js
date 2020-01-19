@@ -26,7 +26,9 @@ const mutations = {
 }
 
 const actions = {
-
+    updateTask() {
+        console.log('updateTask action')
+    }
 }
 
 const getters = {

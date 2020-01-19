@@ -31,8 +31,13 @@
 </template>
 
 <script>
+    import { mapActions } from 'vuex'
+
 export default {
-    
+    props: ['task', 'id']
+    methods: {
+        
+    }
 }
 </script>
 
