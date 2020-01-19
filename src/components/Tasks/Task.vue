@@ -1,10 +1,5 @@
 <template>
-  <q-page class="q-pa-md">
-    <q-list separator bordered>
-
-      <q-item 
-        v-for="(task, key) in tasks"
-        :key="key"
+    <q-item 
         @click="task.completed = !task.completed"
         :class="!task.completed ? 'bg-orange-1' : 'bg-green-1'"
         clickable
@@ -33,19 +28,12 @@
            </div>  
         </q-item-section>
       </q-item>
-
-    </q-list>        
-  </q-page>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
-  computed: {
-    ...mapGetters('tasks', ['tasks'])
-    }
-  }
+    
+}
 </script>
 
 <style>
