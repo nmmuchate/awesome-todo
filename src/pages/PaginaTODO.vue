@@ -16,14 +16,17 @@
           <q-item-label>{{ task.name }}</q-item-label>
         </q-item-section>
 
-        <q-item-section side top>
-          <q-icon name="event" /> 
-          <q-item-label caption>
-              {{ task.dueDate }}
-          </q-item-label>
-          <q-item-label caption>
-              {{ task.dueTime }}
+        <q-item-section side>
+          <div class="row">
+            <q-icon name="event" size="18px" />
+            <div class="column"></div> 
+            <q-item-label caption>
+                {{ task.dueDate }}
             </q-item-label>
+            <q-item-label caption>
+                {{ task.dueTime }}
+            </q-item-label>
+           </div>  
         </q-item-section>
       </q-item>
 
