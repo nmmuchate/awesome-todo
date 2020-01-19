@@ -22,12 +22,14 @@ const state = {
 }
 
 const mutations = {
-
+    updateTask(state, payload) {
+        console.log('payload (from mutation): ', payload);
+    }
 }
 
 const actions = {
-    updateTask() {
-        console.log('updateTask action')
+    updateTask({ commit }, payload) {
+        commit('updateTask', payload)
     }
 }
 
