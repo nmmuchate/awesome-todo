@@ -2,16 +2,8 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          icon="menu"
-          aria-label="Menu"
-        />
 
-        <q-toolbar-title>
+        <q-toolbar-title class="absolute-center">
           Awesome Todo
         </q-toolbar-title>
         
@@ -32,16 +24,18 @@
     <q-drawer
       v-model="leftDrawerOpen"
       :breakpoint="767"
+      :width="250"
       bordered
       content-class="bg-grey-2"
     >
-      <q-list>
+      <q-list dark>
         <q-item-label header>Navigation</q-item-label>
 
         <q-item
           v-for="nav in navs"
           :key="nav.label"
           :to="nav.to"
+          class="text-grey-4"
           exact
           clickable>
             <q-item-section avatar>
