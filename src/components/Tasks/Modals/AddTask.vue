@@ -16,8 +16,15 @@
                         autofocus
                         ref="name"
                         label="Nome do evento" 
-                        class="col" 
-                    />
+                        class="col">
+                            <template v-slot:append>
+                                <q-icon
+                                    v-if="taskToSubmit.name"
+                                    @click="taskToSubmit.name = ''"
+                                    name="close"
+                                    class="cursor-pointer" />
+                            </template>
+                    </q-input>
                 </div>
 
                 <div class="row q-mb-sm">
@@ -32,7 +39,7 @@
                     </q-input>
                 </div>
 
-                <div class="row q-mb-sm">
+                <div v-if="taskToSubmit.dueDate" class="row q-mb-sm">
                     <q-input outlined label="que horas??" v-model="taskToSubmit.dueTime">
                         <template v-slot:append>
                             <q-icon name="access_time" class="cursor-pointer">
@@ -40,6 +47,11 @@
                                     <q-time v-model="taskToSubmit.dueTime"  />
                                 </q-popup-proxy>
                             </q-icon>
+                            <q-icon
+                                    v-if="taskToSubmit.dueDate"
+                                    @click="clearDueDate"
+                                    name="close"
+                                    class="cursor-pointer" />
                         </template>
                     </q-input> 
                 </div>       
@@ -76,6 +88,10 @@
             submitTask() {
                 this.addTask(this.taskToSubmit)
                 this.$emit('close')
+            },
+            clearDueDate() {
+                this.taskToSubmit.dueDate = ''
+                this.taskToSubmit.dueTime = ''
             }
         }
     }
