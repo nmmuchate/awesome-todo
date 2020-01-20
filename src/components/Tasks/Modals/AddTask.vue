@@ -6,9 +6,11 @@
           <q-btn v-close-popup flat round dense icon="close"/>
         </q-card-section>
 
+        
         <q-card-section>
-            <q-input outlined v-model="taskToSubmit.name" label="Task name" />
-        </q-card-section>
+            <div class="row q-mb-sm">
+                <q-input outlined v-model="taskToSubmit.name" label="Task name" />
+            </div>
 
         <q-input outlined v-model="taskToSubmit.dueDate">
             <template v-slot:append>
@@ -28,7 +30,8 @@
                 </q-popup-proxy>
             </q-icon>
             </template>
-        </q-input>                  
+        </q-input>    
+        </q-card-section>              
 
         <q-card-actions align="right">
           <q-btn flat label="Save" color="primary" v-close-popup/>
