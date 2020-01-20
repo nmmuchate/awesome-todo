@@ -13,6 +13,7 @@
                         outlined 
                         v-model="taskToSubmit.name" 
                         :rules="[val => !!val || 'Não Escreveu O seu Nome']" 
+                        autofocus
                         ref="name"
                         label="Nome do evento" 
                         class="col" 
