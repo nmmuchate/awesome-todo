@@ -10,7 +10,7 @@
 
     </q-list> 
 
-    <div class="absolute-bottom text-center" q-mb-lg>
+    <div class="absolute-bottom text-center q-mb-lg">
       <q-btn
         @click="showAddTask = true"
         round
@@ -20,7 +20,7 @@
         />   
       </div>
     <q-dialog v-model="showAddTask">
-      <add-task/>
+      <add-task @close="showAddTask = false"/>
     </q-dialog>  
   </q-page>
 </template>
@@ -29,6 +29,11 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  data() {
+    return {
+      showAddTask: false
+    }
+  },
   computed: {
     ...mapGetters('tasks', ['tasks'])
     },
