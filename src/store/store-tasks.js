@@ -3,7 +3,7 @@ import { uid } from 'quasar'
 
 const state = {
     tasks: {
-        'ID1': {
+        /*'ID1': {
           name: 'Vai para o mercado',
           completed: false,
           dueDate: '2020/01/19',
@@ -20,7 +20,7 @@ const state = {
           completed: false,
           dueDate: '20/01/19',
           dueTime: '16:36'
-        }
+        }*/
     }    
 }
 
