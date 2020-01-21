@@ -1,27 +1,13 @@
 <template>
     <q-card>
-        <modalheader></modalheader>
+
+        <modal-header> Add Task </modal-header>
+
         <form @submit.prevent="submitForm">
             <q-card-section>
-                <div class="row q-mb-sm">
-                    <q-input 
-                        outlined 
-                        v-model="taskToSubmit.name" 
-                        :rules="[val => !!val || 'Não Escreveu O seu Nome']" 
-                        autofocus
-                        ref="name"
-                        label="Nome do evento" 
-                        class="col">
-                            <template v-slot:append>
-                                <q-icon
-                                    v-if="taskToSubmit.name"
-                                    @click="taskToSubmit.name = ''"
-                                    name="close"
-                                    class="cursor-pointer" />
-                            </template>
-                    </q-input>
-                </div>
 
+                <modal-task-name :name.sync="taskToSubmit.name"/>
+                
                 <div class="row q-mb-sm">
                     <q-input outlined label="escreva a data" v-model="taskToSubmit.dueDate">
                         <template v-slot:append>
@@ -55,6 +41,9 @@
             <q-card-actions align="right">
             <q-btn label="Save" color="primary" type="submit"/>
             </q-card-actions>
+
+            <pre>{{ taskToSubmit }}</pre>
+
         </form>
       </q-card>
 </template>
@@ -90,7 +79,8 @@
             }
         },
         components: {
-            'modal-header': require('components/Tasks/Models/Shared/ModalHeader.vue').default
+            'modal-header': require('components/Tasks/Modals/Shared/ModalHeader.vue').default,
+            'modal-task-name': require('components/Tasks/Modals/Shared/ModalTaskName.vue').default
         }
     }
 </script>
