@@ -7,18 +7,9 @@
             <q-card-section>
 
                 <modal-task-name :name.sync="taskToSubmit.name"/>
+
+                <modal-due-date :dueDate.sync="taskToSubmit.dueDate" />
                 
-                <div class="row q-mb-sm">
-                    <q-input outlined label="escreva a data" v-model="taskToSubmit.dueDate">
-                        <template v-slot:append>
-                            <q-icon name="event" class="cursor-pointer">
-                                <q-popup-proxy>
-                                    <q-date v-model="taskToSubmit.dueDate"/>
-                                </q-popup-proxy>
-                            </q-icon>
-                        </template>            
-                    </q-input>
-                </div>
 
                 <div v-if="taskToSubmit.dueDate" class="row q-mb-sm">
                     <q-input outlined label="que horas??" v-model="taskToSubmit.dueTime">
@@ -55,9 +46,9 @@
             return {
                 taskToSubmit: {
                     name: '',
-                    completed: false,
                     dueDate: '',
-                    dueTime: ''
+                    dueTime: '',
+                    completed: false                   
                 }
             }
         },
@@ -80,7 +71,8 @@
         },
         components: {
             'modal-header': require('components/Tasks/Modals/Shared/ModalHeader.vue').default,
-            'modal-task-name': require('components/Tasks/Modals/Shared/ModalTaskName.vue').default
+            'modal-task-name': require('components/Tasks/Modals/Shared/ModalTaskName.vue').default,
+            'modal-due-date': require('components/Tasks/Modals/Shared/Modalduedate.vue').default,
         }
     }
 </script>
